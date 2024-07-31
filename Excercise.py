@@ -289,3 +289,200 @@ fruits4 = tropical + fruits
 # print(fruits2)
 # print(fruits4)
 # print(fruits4 == fruits2)
+#########################
+
+# range(100,2)
+# fruits.append()
+# sl = slice(0, -1, 2)
+# print(slice)
+# print(fruits[sl])
+
+# ws1 = "https://google.com"
+# ws2 = "https://facebook.com"
+# ws3 = "https://cnn.com"
+# ws4 = "https://wireshark.org"
+#
+# domain = slice(8, -4)
+#
+# sites = [ws1, ws2, ws3, ws4]
+# for i in sites:
+#     print(i[domain])
+
+# lst1 = [1, 3, 5, 8, 23, 2, 5, 4, 23, 1, 5, "5"]
+# x = lst1.count(1)
+# print(lst1[0])
+# print(x)
+# lst1.reverse()
+# print(lst1)
+# print(lst1[0])
+
+# lst1 = [1, 4, 5, 7, 34, 56]
+# lst2 = [2, 4, 6, 7, 23, 58, 67, 69]
+#
+# lst3 = []
+# i, j  = 0, 0
+# while i < len(lst1) and j < len(lst2):
+#     if lst1[i] <= lst2[j]:
+#         lst3.append(lst1[i])
+#         i += 1
+#         if i >= len(lst1):
+#             while j < len(lst2):
+#                 lst3.append(lst2[j])
+#                 j += 1
+#     else:
+#         lst3.append(lst2[j])
+#         j += 1
+#         if j >= len(lst2):
+#             while i < len(lst1):
+#                 lst3.append(lst1[i])
+#                 i += 1
+#
+# print(lst1)
+# print(lst2)
+# print(lst3)
+
+
+# lst1 = [56, 13, 37 , 0, 5, 36, 34, 0, -4]
+# for j in range(len(lst1)-1):
+#     for i in range(len(lst1)-1):
+#         if lst1[i] > lst1[i+1]:
+#             lst1[i], lst1[i+1] = lst1[i+1], lst1[i]
+#
+# print(lst1)
+
+# Pascal Triangle
+import pprint
+#
+# n = int(input("the size of triangle"))
+#
+# pascal = []
+# for i in range(n):
+#     pascal.append([1] + [0]*(n-1))
+
+# print(pascal)
+
+# for i in range(1, n):
+#     for j in range(1, i+1):
+#         pascal[i][j] = pascal [i-1][j] + pascal [i-1][j-1]
+
+# for i in range(n):
+#     print(" " * (n-i), end="")
+#     for j in range(i+1):
+#         print(pascal[i][j], end=" ")
+#     print()
+
+# str1 = ""
+# for i in range(n):
+#     str1 += (" " * (n-i)) + str(pascal[i]).replace("0,", "").strip("[]" ) + "\n"
+# print(str1)
+
+
+#pprint.pprint(pascal)
+
+# lst = [1, 2, 3, 4, 5]
+# print(lst)
+# print(*lst)
+#
+# more_num = [*lst, 10, 13, 16]
+# print(*more_num, sep=", ")
+
+# l = [1, 2]
+# m = [l, 3]
+# print(l)
+# print(m)
+# l[0] = m
+# print(l)
+# print(m)
+# print(l[0][0][0][0])
+
+# list of square of numbers from 1 to 10
+
+# ls = [x*x for x in range(1,11) ]
+# print(ls)
+
+# def hello():
+#     print("hello")
+
+# h = hello
+# print(type(h))
+# hello()
+
+# def hello(name="Incognito"):
+#     print(f"Hello {name}")
+#
+# hello()
+# print(hello())
+
+
+# x = 12
+# y = 28
+# z = 40
+# def max2(a, b):
+#     if a > b:
+#         print("this message exists if x > y")
+#         return a
+#     return b
+#
+# print(max2(x, y))
+#
+# def max3(a, b, c):
+#     return max2(a, max2(b, c))
+#
+# print(max3(x, y, z))
+
+# def my_country(country = "Israel"):
+#     print(f"I am from {country}")
+#
+# my_country("Sweden")
+# my_country("India")
+# my_country()
+# my_country("Norway")
+
+# def myfun(x=10, y=50):
+#     print(f"x= {x}")
+#     print(f"y= {y}")
+#
+# myfun(5, 9)
+
+
+# def call_child(*kids:tuple, age):
+#     """This function is going to show the youngest child
+#     in the family without knowing how many children they have
+#     and finally prints names of all children"""
+#
+#     print(f"The youngest child is {kids[-1]}")
+#     print(age)
+#     for i in kids:
+#         print(i)
+#
+# call_child("Emily", "Mary", "David", "Tom", "Bob", "Samanta", age=45)
+#
+# help(call_child)
+
+# fruits = ["apple", "banana", "cherry"]
+# vegetables = ("tomato", "cucumber", "potato", "corn")
+#
+# def my_food(food):
+#     for x in food:
+#         print(x, end=" ")
+#     print()
+# my_food(fruits)
+# my_food(vegetables)
+#
+# x = 10
+# def myfunc(x):
+#         x = 20
+#         return x
+# print(myfunc(x))
+# x = myfunc(x)
+# print(x)
+
+summ = 0
+lst = [-4, 0, 5, 2, 78, 32, 2, 3, -1]
+def avg(iter):
+    summ = 0
+    for i in iter:
+        summ += i
+    return (summ / len(iter), summ)
+print(avg(lst))
+
