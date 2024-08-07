@@ -486,3 +486,146 @@ def avg(iter):
     return (summ / len(iter), summ)
 print(avg(lst))
 
+# 7.07.2024
+
+# def test(a, *b, **c):
+#     print(a)
+#     print(b)
+#     print(c)
+#
+# test(1, 2, 3, 4,[3,5], 5, c=2, d=10, t=True)
+
+# def greet(greeting, *names, **emotions): #  *args; **kwargs
+#     for name in names:
+#         mes = f"{greeting}, {name}!"
+#         if "mood" in emotions:
+#             mes += f"You fill {emotions["mood"]}"
+#         print(mes, end="! ")
+#         if "look" in emotions:
+#             print(f"You are {emotions["look"]}.")
+#         if "greet2" in emotions:
+#             print("HAHAHA")
+#
+# greet("Hello", "Kate", "Alex", "Viky", "John", mood="fun", look="beautiful", greet2="Hi")
+
+
+
+
+# help(list_of_primes_fast)
+
+# from prime import *
+# print(temp)
+# print(city)
+
+
+
+# import datetime
+# num = 11293
+# start = datetime.datetime.now()
+# list_of_primes_fast(num)
+# print(datetime.datetime.now() - start)
+#
+# start = datetime.datetime.now()
+# list_of_primes_classic(num)
+# print(datetime.datetime.now() - start)
+
+import math
+# from math import factorial
+# print(factorial(5))
+# print(factorial(3) + 20)
+# print(factorial(245))
+# print(dir(math))
+# help(math.factorial)
+
+# Lambda - Anonymous functions
+
+# x = lambda : print("Hello, world!")
+# # print(x)
+# greet_user = lambda name : print("Hey there", name)
+# greet_user("Alexander")
+
+# (lambda name : print("Hey there", name))("Alexander")
+#
+# x = lambda x : x + 1
+# print(x(2))
+# # print(x)
+# print((lambda x : x + 1)(5))
+
+# lst = [5, 14, (lambda x : x + 1)(5), 2, True]
+# print(lst)
+#
+# num = int(input("enter the number: "))
+# lst2 = ["number is", num, "square is", (lambda x: x*x)(num), True]
+# print(lst2)
+
+# def get_filter(a, filter=None):
+#     if filter is None:
+#         return a
+#     res = []
+#     for x in a:
+#         if filter(x):
+#             res.append(x)
+#     return res
+#
+# lst = [3, 5, 6, 8, 12, 23, 32, 45, 0, -4]
+# r = get_filter(lst, lambda x: x % 2 == 0)
+# print(lst)
+# print(r)
+# #print(get_filter([5,6,4]))
+
+# def my_food(food):
+#     for x in food:
+#         print(x, end=" ")
+#
+#
+# fruits = ["apple", "banana", "cherry\n"]
+# vegetables = ("tomato", "cucumber", "potato", "corn")
+# my_food(fruits)
+# my_food(vegetables)
+
+#lst = [3, 5, 6, 8, 12, 23, 13, 15, 0, -4]
+
+# lst2 = [x*x for x in lst]
+# lst3 = map(lambda x: x*x,lst)
+# print(lst2)
+# print(lst3)
+# print(lst2.__sizeof__())
+# print(lst3.__sizeof__())
+# print(list(lst3))
+
+# mult3 = filter(lambda x: x % 3 == 0, lst)
+# print(mult3.__sizeof__())
+# print(list(mult3))
+
+
+# seq = "Hello world! The life is very beautiful and great"
+# letters = ['a', 'e', 'o', 'i', 'u']
+
+# def fun(var):
+#     if var in letters:
+#         return True
+#     return False
+
+# fun = lambda var: var in letters
+
+# filtered = filter(lambda var: var in letters, seq)
+# print(list(filter(lambda var: var in letters, seq)))
+
+# def myfunc(n):
+#     return lambda a: a * n
+#
+# mydoubler = myfunc(2)
+# mytripler = myfunc(3)
+# print(mydoubler(11))
+# print(mytripler(8))
+
+# ls = [3, 7, 0, 34, -5]
+# str1 = "Hello world! The life it is very beautiful and great"
+# ls2 = str1.split()
+# print(sorted(ls, reverse=True))
+# print(sorted(ls2, key=lambda ls2: len(ls2), reverse=True))
+
+
+# lst = [[1, 's', 2], [3, 'a', 1], [-2, 'w', 0]]
+# print(sorted(lst))
+# print(sorted(lst, key=lambda lst: lst[1]))
