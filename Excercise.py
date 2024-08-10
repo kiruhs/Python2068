@@ -629,3 +629,192 @@ import math
 # lst = [[1, 's', 2], [3, 'a', 1], [-2, 'w', 0]]
 # print(sorted(lst))
 # print(sorted(lst, key=lambda lst: lst[1]))
+
+# Tuple Кортежи Immutable, ordered, allow duplication values
+
+fruits = ("apple", "banana", "cherry", "apple")
+# fruits3 = ("apple", "cherry", "banana")
+# fruits4 = ("apple", "banana", "cherry")
+# fruits5 = tuple(["apple", "banana", "cherry"])
+# print(fruits)
+# print(type(fruits))
+# x1 = fruits
+# print(x1 is fruits)
+# print(fruits == fruits3)
+# print(fruits == fruits4)
+# print(fruits is fruits4)
+# print(fruits4 == fruits5)
+# print(fruits4 is fruits5)
+# print(fruits4[1])
+
+# tpl = (5, 6, 6, "abc", True)
+# # print(type(tpl))
+# print(tpl)
+# print(tpl[:1:-2])
+# (green, yellow, red) = fruits
+#
+# print(green)
+
+# for i in range(len(fruits)):
+#     print(fruits[i])
+#
+# list(map(print,fruits))
+
+# tpl = (1, 2, 3, 4, 5)
+# tuple2 = tpl + fruits
+# print(tuple2)
+#
+# tuple3 = tpl * 3
+# print(tuple3)
+
+# print(fruits.index("apple"))
+# print(fruits.count("apple"))
+
+# lst = [x for x in range(1,110)]
+# print(lst)
+# print(lst.__sizeof__())
+#
+# tpl = tuple(x for x in range(1,110))
+# print(tpl)
+# print(tpl.__sizeof__())
+
+# inp = [(12,5), (4, 5), (2, 3), (6, 7), (2, 8), (0, -2)]
+# print(inp)
+# ln = len(inp)
+# for i in range(ln):
+#     for j in range(ln-1-i):
+#         if inp[j][0] + inp[j][1] > inp[j+1][0] + inp[j+1][1]:
+#             inp[j], inp[j+1] = inp[j+1], inp[j]
+#
+# print("\nThe answer is: ")
+# print(inp)
+
+# import datetime
+# l = list(range(60_000_000))
+# t = tuple(range(60_000_000))
+# # print(l)
+# # print(t)
+#
+# start = datetime.datetime.now()
+# for i in range(len(t)):
+#     a = t[i]
+# end = datetime.datetime.now()
+# print(f"lookup time for tuple is {end - start}")
+# # ==============
+# start = datetime.datetime.now()
+# for i in range(len(l)):
+#     a = l[i]
+# end = datetime.datetime.now()
+# print(f"lookup time for list is {end - start}")
+
+# y = {4}
+# # print(isinstance(y, float))
+#
+# tpl = (float, str, list, dict, tuple)
+# # print(tpl)
+# print(isinstance(y, tpl))
+
+li = (4, 5, True, "abc", 6, 10, [1, 2, 3], 11, (2, 5), 4)
+
+# def count(obj):
+#     cnt = 0
+#     for num in obj:
+#         if isinstance(num, tuple):
+#             break
+#         cnt += 1
+#     return cnt
+#
+# print(count(li))
+# print(li)
+# print(li.index([1, 2, 3]))
+# print(id(li))
+# li[6].append(5)
+# li[6][0] = "Kuku"
+# print(li)
+# print(id(li))
+
+# print(fruits)
+# print(id(fruits))
+# tpl = ("orange",)
+# fruits += tpl
+# print(fruits)
+# print(id(fruits))
+
+# st = {1, 3, True, "Hello", None, 4.34, *[3, 5], *{7, 8}, 5, 3, False, 0}
+# print(type(st))
+# print(st)
+# st[1] = 3
+
+# string1 = "abracadabra"
+# set1 = set(string1)
+# print(set1)
+# set2 = set1
+# print(set2 is set1)
+# set3 = set(string1)
+# print(set3 is set2)
+# new_str = "".join(set1)
+# print(new_str)
+# symbol = "t"
+# if symbol in set1:
+#     print(symbol)
+# else:
+#     print(f"symbol {symbol} does not exist")
+#
+# set1.add("t")
+# print(set1)
+fruits = set(fruits)
+# print(fruits)
+# print(id(fruits))
+# fruits.add("lemon")
+# print(fruits)
+tropical = {"mango", "kiwi", "pineapple"}
+# for i in tropical:
+#     fruits.add(i)
+#
+# print(fruits)
+# # print(id(fruits))
+#
+# print(tropical.issubset(fruits))
+# print(tropical >= fruits)
+#
+# print(fruits.issuperset(tropical))
+# print(len(fruits))
+st3 = {False, "", 0 , None}
+# print(sum(st3)) # min, max
+
+# print(all(st3))
+# print(any(st3))
+
+# print(fruits)
+# print(tropical)
+# fruits.update(tropical)
+fruits |= tropical # fruits = fruits + tropical
+# print(fruits)
+# print(fruits | tropical)
+# print(fruits.union(tropical))
+# print(fruits)
+# print(tropical)
+# print(id(fruits))
+# fruits.remove('apple')
+# print(fruits)
+# fruits.discard('apple')
+# fruits.discard('mango')
+# print(fruits)
+
+# print(fruits.pop())
+# print(fruits)
+#fruits.clear()
+# print(id(fruits))
+# del fruits
+# print(fruits) will receive error
+
+# st1 = {1, 2, 3}
+# st2 = {"5", "7", "12"}
+# st3 = {True, False, "apple",3}
+# newset = st1.union(st2, st3, fruits)
+# print(newset)
+#
+# # new = st1.intersection(st3)
+# new = st1 & st3
+#
+# print(new)
