@@ -818,3 +818,228 @@ fruits |= tropical # fruits = fruits + tropical
 # new = st1 & st3
 #
 # print(new)
+
+# 13.08.2024
+
+# set2 = {3, 7, "Hello", *[5,6], *{True, False}}
+# lst = ['a', 'b', 'c', 'd', 'e', 'f', 'c', 'b']
+# # print(set2)
+# s = {*lst}
+# print(s)
+
+# set1 = {'apple', 'banana', 'cherry'}
+# set2 = {'google', 'apple', 'microsoft'}
+
+# set3 = set1.difference(set2)
+# print(set3)
+# print(set1)
+# print(set2)
+# #set4 = set2.difference(set1)
+# set4 = set2 - set1
+# print(set4)
+# print(id(set1))
+# set1.difference_update(set2)
+# print(set1)
+# print(id(set1))
+
+# set3 = set1.symmetric_difference(set2)
+# set4 = set2.symmetric_difference(set1)
+# print(set3)
+# print(set4)
+
+# set1.symmetric_difference_update(set2)
+# print(set1)
+# set1 ^= set2
+# set3 = set1 ^ set2
+# print(set3)
+#
+# # set1 = set1.union(set2)
+# set1 |= set2
+# print(set1)
+
+# set2.intersection_update(set1)
+# set2 &= set1
+#
+# print(set2)
+# print(set1)
+
+# frozenset
+# st = set1 | set2
+# st.add(100)
+# st = frozenset(st)
+# print(st)
+# print(type(st))
+# # st.add(50)
+# st = set(st)
+
+# performance set vs list and tuple
+# from time import perf_counter_ns
+# MAX_VALUE = 20_0000_000
+# SEARCH_ITEM = 19_999_0000
+#
+#
+# def measure_time(data):
+#     start = perf_counter_ns()
+#     SEARCH_ITEM in data
+#     return perf_counter_ns() - start
+#
+# st = set(range(1, MAX_VALUE))
+# lst = list(range(1, MAX_VALUE))
+# tpl = tuple(range(1, MAX_VALUE))
+# print(st)
+# print(lst)
+# print(tpl)
+
+
+# print(f"Set search time: {measure_time(st)}")
+# print(f"Tuple search time: {measure_time(tpl)}")
+# print(f"List search time: {measure_time(lst)}")
+
+
+# Dictionary - iterable pairs, mutable, order, but not indexable, key - value, not duplicable
+from pprint import pprint
+
+
+# car = {'brand': 'Ford',
+#        'model': 'Mustang',
+#        'year': 1980}
+# print(type(car))
+# pprint(car)
+#
+# print(car['year'])
+# print(car.get('model'))
+# car['color'] = 'red'
+# print(car)
+# car['year'] = 1967
+# print(car)
+# car['color'] = ['red', 'white', 'blue']
+#
+# print(car)
+
+person = dict(name= 'John', age= 36, country= 'Ireland')
+# print(person)
+#
+# print(('age' in person.keys()))
+# print(person.values())
+#
+# print(person.items())
+person.update({'country': 'UK'})
+person.update({'Hobby': 'Traveling'})
+# print(person)
+
+# c = person.pop('country')
+# print(person)
+# print(c)
+# last = person.popitem()
+# print(last)
+# person.clear()
+# del person
+
+# print(person)
+
+# for x in person:
+#     print(x)
+#
+# for y in person:
+#     print(person[y])
+#
+# for y in person.values():
+#     print(y)
+
+# for x, y in person.items():
+#     print(f'key - {x}, value - {y}')
+
+# person2 = person
+# person2 = person.copy()
+#
+# print(id(person))
+# print(id(person2))
+#
+# person3 = dict(person)
+# print(id(person3))
+
+# num = [2, 18, 5, 9, 7, 2, 32, 6, 9, 4, 8, 9, 12, 14, 14]
+# my_dict = {k: num.count(k) for k in num}
+# print(my_dict)
+
+# nested dictionaries
+
+# family = {
+#     'child1': {
+#         'name': "Johnie",
+#         'age': 14
+#     },
+#     'child2': {
+#         'name': "Mary",
+#         'age': 11
+#     },
+#     'child3': {
+#         'name': "David",
+#         'age': 5
+#     }
+# }
+#
+# pprint(family)
+# family['child3']['name'] = 'Bob'
+# print(family['child3']['name'])
+
+
+# x = ('day1', 'day2', 'day3')
+# y = 0
+# newdict = dict.fromkeys(x)
+# print(newdict)
+# newdict['day1'] = 10000
+# print(newdict)
+
+# print(person)
+# p = person.setdefault("from country", "USA")
+# print(person)
+
+# keys = ('a', 'b', 'c','d', 't')
+# values = (1, 2, 3)
+
+# zip()
+
+# print(zip(keys,values))
+# dict1 = dict(zip(keys,values))
+# print(dict1)
+#
+# dict2 = {keys[i]: values[i] for i in range(len(values))}
+# print(dict2)
+
+# st = "2 18 5 9 7 2 32 6 9 4 8 9 12 14 14"
+# # key - element, value - square of element
+#
+# my_dict = {key: int(key)**2 for key in st.split() if int(key) % 2 == 0}
+# print(my_dict)
+#
+# string1 = "Hello people, how are you today? We are learning the perfect programming language Python. Good luck!"
+#
+# def create_symbol_dict(text):
+#     symbol_dict = {}
+#
+#     for symbol in text:
+#         if symbol == ' ':
+#             continue
+#         if symbol not in symbol_dict:
+#             symbol_dict[symbol] = 1
+#         else:
+#             symbol_dict[symbol] += 1
+#     return symbol_dict
+#
+# result = create_symbol_dict(string1.lower())
+# print(result)
+
+# d = {1: 2, 3: 4, 4: -3, 2: 1, 0: 8}
+# print(d)
+# print(sorted(d.keys()))
+# print(sorted(d.values()))
+#print({k: v for k, v in sorted(d.items())})
+# print({k: v for k, v in sorted(d.items(), key=lambda item: item[1])})
+
+# def fun(a=0, b=0):
+#     return a + b
+# 
+# my_dict = {'a': 2, 'b': 3}
+# result = fun(**my_dict)
+# print(result)
