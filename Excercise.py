@@ -1043,3 +1043,156 @@ person.update({'Hobby': 'Traveling'})
 # my_dict = {'a': 2, 'b': 3}
 # result = fun(**my_dict)
 # print(result)
+
+# 16.08.2024
+
+# st = "2 18 5 9 7 2 32 6 9 4 8 9 12 14 14".split()
+# print(st)
+# my_dict = {int(n): st.count(n) for n in st}
+# print(my_dict)
+# new = {}
+# my_dict1 = {'item': 'jacket', 'size': 'L', 'color': 'black'}
+# my_dict2 = {'model': 'sunny', 'quantity': 30, 'color': 'blue'}
+# for i in my_dict2:
+#     new.update(my_dict2.items())
+# for j in my_dict1:
+#     new.update(my_dict1.items())
+
+# print(new)
+
+# print({**my_dict1, **my_dict2})
+# while True:
+#     mark = input("choose your mark (1-5): ")
+#     d_mark = {'1': 'Very bad!',
+#               '2': 'Not good!',
+#               '3': 'May be better!',
+#               '4': 'Good work!',
+#               '5': 'Perfect!'}
+#     if mark in d_mark:
+#         print(d_mark[mark])
+#         break
+#     else:
+#         print("invalid entry")
+
+# words = {}
+# print("This is the dictionary that you create yourself, just enter a word , for exit enter 'q")
+# while True:
+#     s = input("enter a new word: ")
+#     if s == 'q':
+#         break
+#     if s in words:
+#         print(f"word {s} is translated as {words[s]}")
+#     else:
+#         words[s] = input("type the translation in russian ")
+
+# str.transle()
+
+# table = {119: 103, 121: 102, 117: None} # 119 - 'w', 103 - 'g', 121 - 'y', 102 - 'f', 117 - 'u'
+#
+# target = "weeksyourweeks"
+#
+# print("Before: ",target)
+# print("After: ", target.translate(table))
+
+# student_list = {'S 001': ['M a t h','Astro nomy'], 'S   002': ['Math', 'Eng lish']}
+# print("Original dictionary: ", student_list)
+#
+# student_dict = {k.translate({32: None}): [i.translate({32: None}) for i in v]
+#                 for k, v in student_list.items()}
+# print(student_dict)
+# list comprehension
+# fruits = ['apple', 'orange', 'avocado', 'kiwi', 'banana']
+# basket = ['apple', 'avocado', 'kiwi', 'apricot']
+#
+# a_fruits = [i for i in fruits if i in basket and i.startswith('a')]
+# print(a_fruits)
+
+# tuple comprehension - does not exist
+
+# tpl = tuple(elem**0.5 for elem in range(1,11))
+# tpl = tuple(float(f"{elem**0.5:.3f}") if elem**0.5 % 1 != 0 else int(elem**0.5) for elem in range(1,11))
+# print(tpl)
+
+# dictionary comprehension
+
+# apples = ["apple", "green apple", "red apple", "pineapple"]
+# apple_names = {x: len(x) for x in apples}
+# print(apple_names)
+
+# fish = {
+#     "guppies" : 2,
+#     'zebras' : 4,
+#     'bettas' : 10,
+#     'tuna' : 15,
+#     'salmon': 12
+# }
+#
+# def myFish(**fish):
+#     for key, value in fish.items():
+#         print(f"I have {value} {key} fish")
+#     # print(f"I have {zebras} zebra fish")
+#     # print(f"I have {bettas} betta fish")
+#
+# myFish(**fish)
+
+# set comprehension
+
+# st = {x*x for x in range(1,11) if x != 5 and x*x % 10 in (0, 1, 9)}
+# print(st)
+
+# str.translate() ; str.maketrans()
+# x = 'aeiou'
+# y = '12345'
+# table = str.maketrans(x, y)
+# print(table)
+# text = "this is our text"
+# trans_text = text.translate(table)
+# print(text)
+# print(trans_text)
+#
+# rev_table = str.maketrans(y,x)
+# decrypt_text = trans_text.translate(rev_table)
+# print(decrypt_text)
+
+# input
+dict1 = {'a': 10, 'b': 20, 'c': 30}
+dict2 = {'a': 5, 'b': 15, 'd': 25}
+# combine_dict dict1 + dict2
+
+# comb_dict = {k: value if not k in dict2 else value+dict2[k] for k, value in dict1.items()}
+# print(comb_dict)
+
+# comb_dict = {}
+# for key, value in dict1.items():
+#     comb_dict[key] = value
+# # print(comb_dict)
+# for key, value in dict2.items():
+#     if key in comb_dict:
+#         comb_dict[key] += value
+#     else:
+#         comb_dict[key] = value
+# print(comb_dict)
+
+# from collections import Counter
+#
+# print(Counter(dict1) + Counter(dict2))
+# lst = [1, 2, 3, 4]
+# # output {1: {2: {3: {4: {}}}}}
+#
+# new = current = {}
+#
+# for num in lst:
+#     current[num] = {}
+#     current = current[num]
+#
+# print(new)
+
+colors = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+# dict = {'yellow': [1, 3], 'blue': [2, 4], 'red': [1]}
+
+def grouping(lst):
+    result = {}
+    for k, v in lst:
+        result.setdefault(k, []).append(v)
+    return result
+print(grouping(colors))
