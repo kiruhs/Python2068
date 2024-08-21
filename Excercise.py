@@ -1196,3 +1196,165 @@ def grouping(lst):
         result.setdefault(k, []).append(v)
     return result
 print(grouping(colors))
+
+# 20.08.2024
+
+
+# dct = {'c1': [10, 20, 30], 'c2': [20, 30, 40], 'c3': [50, 60]}
+#
+# # {'c1': [], 'c2': [], 'c3': []}
+# # list.clear()
+#
+# dct.update({'': []})
+# dct.update({'': []})
+# dct.update({'': []})
+# print(dct.keys())
+
+
+# dct = {1: {2: {3: {}}}}
+
+# def dict_depth(d):
+#     if isinstance(d, dict):
+#         return 1 + (max(map(dict_depth, d.values())) if d else 0)
+
+# dep = 1
+# def dict_depth(d):
+#     global dep
+#     for v in d.values():
+#         if isinstance(v, dict):
+#             dep += 1
+#             return dict_depth(v)
+#     return dep
+#
+# print(dict_depth(dct))
+
+# fruits = ['apple']
+# fr_dct = {x: {x: {len(x) for x in fruits} for x in fruits} for x in fruits }
+#
+# print(fr_dct)
+
+# coord = {'x': 5, 'y': 9, 'z': -12}
+# coord_l = [5, 9, -12]
+# coord_t = (5, 9, -12)
+
+# coord = {k: k*k for k in range(1_000_000)}
+# coord_l = [k*k for k in range(1_000_000)]
+# coord_t = tuple(k*k for k in range(1_000_000))
+#
+# print(f"dict: {coord.__sizeof__()}")
+# print(f"list: {coord_l.__sizeof__()}")
+# print(f"tuple: {coord_t.__sizeof__()}")
+
+# marks = (98, 80, 91)
+# print(marks)
+# print(marks[1])
+
+from collections import namedtuple
+
+# Marks = namedtuple('Marks', 'Physic Chemistry Math English')
+# marks2 = Marks(90, 80, 45, 100)
+# print(marks2)
+# print(marks2.Math)
+
+# dct = {'Physics': None, 'Chemistry': None, 'Math': None, 'English': 10}
+# Marks_d = namedtuple('Marks_d', dct)
+# # print(Marks_d(**dct))
+# marks3 = Marks_d(90, 80, 45, 100)
+# print(marks3)
+#
+# print(dct.__sizeof__())
+# print(marks3.__sizeof__())
+
+# lst = ['Physics', 'Chemistry', 'Math', 'English']
+# lst2 = [67, 78, 90, 93]
+# Marks = namedtuple('Marks', lst)
+# marks5 = Marks._make(lst2)
+# print(marks5)
+# print(marks5.English)
+# print(marks5[1])
+# # marks5[3] = 80 returns error immutable type
+# print(id(marks5))
+# marks3 = marks5._replace(Math=99)
+# print(id(marks5))
+# print(marks3)
+
+# Student = namedtuple('Student', ['name', 'age', 'marks'])
+# student1 = Student(name='Alice', age=22, marks=[89, 92, 75, 90, 79])
+#
+# def calc_avg_grade(student):
+#     # total = sum(student.marks)
+#     # avg = total / len(student.marks)
+#     # return avg
+#     return sum(student.marks) / len(student.marks)
+#
+# print("Average grade is: ", int(calc_avg_grade(student1)))
+
+# Person = namedtuple('Person', 'name age height')
+#
+# ExtendedPerson = namedtuple('ExtendedPerson', [*Person._fields,'weight'])
+#
+# people1 = ExtendedPerson('Jane', age=32, height=1.68, weight=65)
+# print(people1)
+# people2 = Person('Michael', 35, 178)
+# print(people2)
+
+# Person = namedtuple('Person', 'name age height weight')
+# people = Person('Jane', age=32, height=1.68, weight=65)
+# #
+# # for field, value in zip(people._fields, people):
+# #     print(field, " : ", value)
+#
+# people_dict = people._asdict()
+# print(people_dict)
+
+# num = 127259
+# summ = 0
+# while num >= 10:
+#     summ += num % 10
+#     num = num // 10 # num //= 10
+# summ += num
+#
+# print(summ)
+
+# def power(x, y):
+#     sum = 1
+#     for i in range(y):
+#         sum = x*sum
+#     return sum
+# # print(power(4, 3))
+#
+# def order(num):
+#     n = 0
+#     while num:
+#         n += 1
+#         num //= 10
+#     return n
+# # def isArmstrong(number):
+# #     x = order(number)
+# #     tmp = number
+# #     sum1 = 0
+# #     while (tmp):
+# #         num = tmp % 10
+# #         sum1 += power(num, x)
+# #         tmp = tmp // 10
+# #     # tmp == 0
+# #     return (sum1 == number)
+#
+# # print(isArmstrong(153))
+#
+# # def isArmstrong(num):
+# #     num_str = str(num)
+# #     sum = 0
+# #     for dig in num_str:
+# #         sum += power(int(dig),len(num_str))
+# #     if sum == num:
+# #         return True
+# #     return False
+# #
+# def isArmstrong(number):
+#     return sum(power(int(digit), len(str(number))) for digit in str(number)) == number
+#
+#
+# for i in range(10, 10000):
+#     if isArmstrong(i):
+#         print(i)
