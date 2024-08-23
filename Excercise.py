@@ -1358,3 +1358,211 @@ from collections import namedtuple
 # for i in range(10, 10000):
 #     if isArmstrong(i):
 #         print(i)
+
+# 23.08.2024
+
+
+# lst = [1, 2, 3, 1, 2, 4, 5, 6, 7, 8, -2, 3, 4, 5, 6, 7, 8, -2]
+#
+# def first_not_rep(l):
+#     ctr = {}
+#
+#     for i in lst:
+#         if i in ctr:
+#             ctr[i] += 1
+#         else:
+#             ctr[i] = 1
+#
+# #    print(ctr)
+#
+#     for i in lst:
+#         if ctr[i] == 1:
+#             return i
+#     return "No non-repeatable element"
+# print(first_not_rep(lst))
+
+# lst = [x*x for x in range(1,11)]
+# print(a)
+#
+# for i in a:
+#     print(i)
+#
+# i = 0
+# while i < len(a):
+#     print(a[i])
+#     i += 1
+
+# gen = (x*x if x!=6 else 4 for x in range(1,11))
+# print(gen)
+# i = 0
+# while i < len(a):
+#     print(a[i])
+#     i += 1
+
+# for i in gen:
+#     print(i)
+
+# print(lst.__sizeof__())
+# print(gen.__sizeof__())
+
+# print(lst)
+# print(lst)
+# print(list(gen))
+# print(list(gen))
+
+# print(4 in gen)
+# print(4 in gen)
+# print(64 in gen)
+# print(36 in gen)
+#
+# print(next(gen))
+# print(next(gen))
+
+# index = 1
+# while index < 7:
+#     index += 1
+#     next(gen)
+#
+# print(next(gen))
+
+# def my_numbers():
+#     a = 1
+#     while True:
+#         yield a
+#         a += 1
+# y = my_numbers()
+# print(range(10))
+#
+# x = iter(range(10))
+# # print(x)
+# # print(tuple(x))
+# print(*x) # another way - unpacking
+# print(*x, " nothing")
+# # print(next(x))
+# # print(next(x))
+# # print(dir(y))
+# z = [1, 2, 3]
+# print(z)
+# print(*z)
+# print(*z)
+
+# print(dir(range))
+# print(dir(z))
+
+
+# MAP - 2 (+) arguments, 1-function(without call) and iterable (one or more)
+
+# s = "12345678987654"
+# m = max(map(int,s)) # max works with iterable collection as well as with iterators
+# print(m)
+# sm = sum(map(int,s)) # sum works with iterator
+# # print(dir(s))
+# #print(list(s))
+# # print(max(*s))
+# print(sm)
+
+# s = int(input())
+# s = map(int, input().split())
+# print("your numbers are: ", *s)
+
+# string2 = "Hello world the language of programming are different"
+# s2 = string2.split()
+# # m = map(lambda word: len(word), s2)
+# m = map(len, s2)
+# print(list(m))
+# ln = [len(i) for i in s2]
+# print(ln)
+# print(m.__sizeof__())
+# print(ln.__sizeof__())
+
+# ls = [math.sqrt(i) for i in range(1, 101)]
+# print(ls)
+#
+# ls2 = map(math.sqrt, range(1, 101))
+# # print(list(ls2))
+# # 2.23606797749979
+# print(ls.__sizeof__())
+# print(ls2.__sizeof__())
+# c = 1
+# for i in ls2:
+#     c += 1
+#     if c == 5:
+#         break
+# print(next(ls2))
+
+# actions = ['eat', 'sleep', 'read']
+# # output [['e', 'a', 't'], [...]
+#
+# res = list(map(lambda act: list(act), actions))
+# print(res)
+
+# cars = {1: "Mercedes", 2: "BMW", 3: "Ferrari", 4: "Lamborghini", 5: "Jeep"}
+# # _2024
+#
+# cars_new = dict(map(lambda t: (t[0], t[1]+'_2024'), cars.items()))
+# print(cars_new)
+
+# Filter()
+
+# string1 = ('''This is the text for testing the function that used for finding all words
+#             that compatible for filter function for lesson purposes''')
+
+# res = [x for x in string1.split() if x.lower().startswith('t')]
+# print(res)
+
+# f = filter(lambda x: x.startswith('t'), string1.split())
+# # print(*f)
+# print(next(f))
+# print(next(f))
+# print(next(f))
+
+# mul3 = filter(lambda x: x % 2 != 0, [1, 2, 3, 4 , 5, 6])
+# print(*mul3)
+
+import prime
+
+# lst5 = [x for x in range(1,101)]
+# # print(lst5)
+#
+# # prime.is_prime()
+#
+# print(*filter(prime.is_prime, lst5))
+# print(*filter(lambda x: not prime.is_prime(x), lst5))
+
+# tpl = tuple(x for x in range(1, 1_000_000))
+# # print(tpl)
+# prm = tuple(filter(prime.is_prime, tpl))
+# prm_l = list(filter(prime.is_prime, tpl))
+# # print(prm)
+# cnt = len(prm)
+# res = prm[-1]
+# print(cnt, res)
+# print(prm_l.__sizeof__())
+# print(prm.__sizeof__())
+
+# lst3 = [4, 9, -3, 5, 9, -16]
+#
+# print(list(map(math.sqrt, filter(lambda x: x>=0, lst3))))
+
+# lst1 = [1, 2]
+# lst2 = [4, 5, 6, 9]
+# lst3 = (7, 8, 9)
+#
+# print(lst1)
+# print(lst2)
+# print(lst3)
+#
+# res = map(lambda x, y, z: x + y + z, lst1, lst2, lst3)
+# print(list(res))
+
+str1 = '5345435n342'
+
+while True:
+    try:
+        n = int(input())
+        print()
+    except:
+        continue
+    break
+
+print("Ok")
