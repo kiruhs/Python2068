@@ -1566,3 +1566,193 @@ while True:
     break
 
 print("Ok")
+
+# 27.08.2024
+# Python 2 received in map ready list and not iterator, in Python 3 it was changed
+# lst = [1, 2, 3]
+# m = map(math.sqrt, lst)
+# print(m)
+
+
+# str1 = input("Input the string: ")
+# str1 = str1.strip()
+# while len(str1) < 1:
+#     str1 = input("Input some string: ")
+# else:
+#     if all(str1[i] in "0123456789" for i in range(len(str1))):
+#         print("The string is integer number")
+#     elif (str1[0] in "+-" and all(str1[i] in "0123456789" for i in range(1,len(str1)))):
+#         print("The string is integer number")
+#     else:
+#         print("The string is not integer number")
+
+# l = [i**2 for i in range(1,100_000_000)]
+# print(l)
+# print(l.__sizeof__())
+n = 100_000_000
+# l_g = (i**2 for i in range(1,n))
+# print(range(1,n))
+# print(l_g.__sizeof__())
+
+# def func_l(num):
+#     cnt = 0
+#     while cnt < num:
+#         res = cnt**2
+#         yield res
+#         cnt += 1
+# gen = func_l(n)
+# # print(gen.__sizeof__())
+#
+# for i in range(10000):
+#     next(gen)
+#
+# print(next(gen))
+# print(gen.__sizeof__())
+
+# a shift1 -> b
+#b - c; c - d
+
+# caesar cypher
+
+# shift 3
+
+# def shift_chr(c):
+#     rot_by = 3
+#     c = c.lower()
+#     alphabet = "abcdefghijklmnopqrstuvwxyz"
+#     if c not in alphabet:
+#         return chr(ord(c) - 4)
+#     rot_pos = ord(c) - rot_by
+#     if c not in alphabet:
+#         return c
+#     if rot_pos <= ord(alphabet[-1]):
+#         return chr(rot_pos)
+#     # print(rot_pos)
+#
+#     return chr(rot_pos - len(alphabet))
+# str = "Welcome to python lesson!"
+# decrypt = "zhofrph$wr$sbwkrq$ohvvrq%"
+# print("".join(map(shift_chr, decrypt)))
+
+# x = iter(range(10))
+# # a,b,*c = x
+# # [*b] = x  # == b = list(x)
+# b= [*x]
+# # b = list(x)
+# # print(a)
+# print(b)
+# # print(c)
+
+# zip()
+# a = [1, 2, 3]
+# b = ('a', 'b', 'c')
+# c = {'Hello', 'My', 'Dear'}
+# x = zip(a, b, c)
+# print(x)
+# print(dir(x))
+# print(dir(a))
+# print(next(x))
+# print(next(x))
+# print(next(x))
+# print(next(x))
+# print(*x)
+# print(list(x))
+
+# print(tuple(x))
+#
+# lst = [i for i in range(200000)]
+# it = iter(lst)
+#
+# start = datetime.datetime.now()
+# for i in lst:
+#     a = i
+# print(datetime.datetime.now() - start)
+#
+# start = datetime.datetime.now()
+# for i in it:
+#     a = i
+# print(datetime.datetime.now() - start)
+
+# a = [1, 2]
+# b = ('a', 'b', 'c')
+# c = {'Hello', 'My', 'Dear'}
+# x = zip(a, b, c)
+# y = zip(a)
+# print(list(x))
+# from Python 3.10
+# print(list(zip(range(20), range(100), strict=True)))
+
+# in Python 2 itertools.izip() - similar to zip() in Python 3
+
+# letters = ('a', 'b', 'c', 'd')
+# words = ['Hello', 'My', 'Dear']
+#
+# for l, w in zip(letters, words):
+#     print(f"Letter {l}")
+#     print(f"Word {w}")
+
+# pairs = [(1, 'a'), (2, 'r'), (6, 'w'), (10, 't')]
+#
+# numbers, letters = zip(*pairs)
+# print(numbers)
+# print(letters)
+
+# sales = [50_000, 45_000, 90_000]
+# self_cost = [25_000, 25_000, 40_000]
+#
+# for sale, cost in zip(sales, self_cost):
+#     profit = sale - cost
+#     print(f"Total profit is {profit}")
+
+# fields = ['name', 'last_name', 'age', 'job']
+# values = ['John', 'Dow', 45, 'Python Developer']
+#
+# lst = list(zip(fields, values))
+# dct = dict(zip(fields, values))
+# print(lst)
+# print(dct)
+
+# num = 124589
+
+# def is_ascending(number):
+#     num_str = str(number)
+#     for i in range(1, len(num_str)):
+#         if num_str[i] <= num_str[i-1]:
+#             return False
+#
+#     return True
+# --------------------
+
+# def is_ascending(number):
+#     num_str = str(number)
+#     # num_str[i], num_str[i-1]
+#     return all(a < b for a, b in zip(num_str,num_str[1:]))
+#
+# asc = is_ascending(num)
+# if asc:
+#     print("This is ascending collection of digits")
+# else:
+#     print("This isn't ascending collection of digits")
+# import itertools
+# fields = ['name', 'last_name', 'age', 'job']
+# values = ['John', 'Dow', 45, 'Python Developer','London', 'Married', 'surfing liker']
+#
+# print(*itertools.zip_longest(fields, values, fillvalue='Additional info'))
+
+# write a program to split a dictionary of lists into list of dictionaries
+
+# marks = {'Science': [88, 89, 67, 95], 'Language': [77, 78, 84, 90], 'Math': [90, 73, 85]}
+
+# [{'Science':88, 'Language':77}, {'Science':89, 'Language':78}, {'Science':67, 'Language':84}, {'Science':95, 'Language':90}]
+
+# def list_of_dicts(m):
+#     keys = m.keys()
+#     vals = itertools.zip_longest(*[m[k] for k in keys])
+#     # print(keys, *vals)
+#     res = [dict(zip(keys, v)) for v in vals]
+#     return res
+# print(list_of_dicts(marks))
+
+# map  starmap()
+# print(list(map(pow, (2,7), (4,3))))
+# print(list(itertools.starmap(pow,[(2,7), (4,3), (3,4)])))
