@@ -1756,3 +1756,208 @@ n = 100_000_000
 # map  starmap()
 # print(list(map(pow, (2,7), (4,3))))
 # print(list(itertools.starmap(pow,[(2,7), (4,3), (3,4)])))
+
+# 30.08.2024
+
+import time
+# lst = [i for i in range(2_000_000)]
+# it = iter(lst)
+#
+# start = time.perf_counter_ns()
+# cnt = 0
+# for i in lst:
+#     # # if cnt == 2_000_000:
+#     # #     break
+#     # # else:
+#     #     cnt += 1
+#         a = i
+# print(time.perf_counter_ns() - start)
+#
+# start = time.perf_counter_ns()
+# cnt = 0
+# for i in it:
+#     # if cnt == 2_000_000:
+#     #     break
+#     # else:
+#     #     cnt += 1
+#         a = i
+# print(time.perf_counter_ns() - start)
+
+
+# lst = [i for i in range(2_000_000)]
+# m = map(int, lst)
+# cnt = 0
+# start = time.perf_counter_ns()
+#
+# for i in lst:
+#     if cnt == 2_000_000:
+#         break
+#     else:
+#         a = i
+#         cnt += 1
+# print(time.perf_counter_ns() - start)
+# cnt = 0
+# start = time.perf_counter_ns()
+# for i in m:
+#     if cnt == 2_000_000:
+#         break
+#     else:
+#         a = i
+#         cnt += 1
+# print(time.perf_counter_ns() - start)
+
+import itertools
+import functools
+# reduce()
+# temp = 78
+# lis = [1, 2, 4, 5, 5, 7, 3] # 1 + 2 = 3; 3 + 4 = 7; 7 + 5 = 12 ;
+# red = functools.reduce(lambda a, b: a + b, lis, temp)
+# print(red)
+
+# ls = sum(lis)
+# print(ls)
+
+# st = ["hello", "python", "team"]
+#
+# print(reduce(lambda a, b: a + b, st))
+
+# str2 = "Hello world! The live is beautiful dixi"
+#
+# lng = 0
+# mx = ''
+# for i in str2.split():
+#     if len(i) > lng:
+#         lng = len(i)
+#         mx = i
+# print(lng, mx)
+# it = iter(str2.split())
+#
+# print(max(map(len, str2.split())))
+# print(reduce(lambda a, b: a if len(a) > len(b) else b, it))
+#
+# import operator
+# lis = [3, 2, 3, 2]
+# st = ["hello", "python", "team"]
+# print(reduce(operator.add, st))
+
+# num = [3, 4, 7, 1, -4, 10, 3, 5]
+# # print(max(num))
+# print(reduce(lambda a, b: a if a > b else b, num, 8))
+
+# lst = [1,4]
+# it = iter(lst)
+# it2 = iter(it)
+# print(it is it2)
+
+
+
+# def reduce(function, iterable, initializer=None):
+#     it = iter(iterable)
+#     if initializer is None:
+#         value = next(it)
+#     else:
+#         value = initializer
+#     for element in it:
+#         value = function(value, element)
+#     return value
+
+# lst = [3, 5, 7, 1]
+# print(reduce(lambda a, b: a + b, lst))
+
+# lst2 = [ i for i in range(2_000_000)]
+#
+# start = time.perf_counter_ns()
+# res = reduce(lambda a, b: a + b, lst2)
+# print(time.perf_counter_ns() - start)
+#
+# start = time.perf_counter_ns()
+# res = functools.reduce(lambda a, b: a + b, lst2)
+# print(time.perf_counter_ns() - start)
+
+# accumulate
+
+# num = [3, 4, 7, 1, -4, 10, 3, 5]
+# reduce_test = functools.reduce(lambda a, b: a + b,num)
+# # print(reduce_test)
+#
+# accumulate_test = itertools.accumulate(num, lambda a, b: a + b)
+# # print(*accumulate_test)
+# # print(list(accumulate_test))
+# print(next(accumulate_test))
+
+t = 'ABCD'
+#
+# print(*itertools.combinations_with_replacement(t, 2))
+# print(*itertools.combinations(t, 2))
+#
+# print(*itertools.permutations(t,2))
+
+# lst = {1, -4, 6, 2, 3, 8, -10, 3, 5, 6, 8, 2, 4, 865, 43, 234 ,6362, 253, 12}
+# drop = itertools.dropwhile(lambda x: x < 3, lst)
+# print(*drop)
+
+# batched
+# flatten = ['roses', 'red', 'violet', 'blue', 'sugar', 'sweet', 'green', 'yellow', 'bird', 'bee', 'pink']
+# unflatten = list(itertools.batched(flatten,3))
+# nested_unflatten = list(itertools.batched(itertools.batched(flatten,3), 2))
+# print(nested_unflatten)
+
+# num = 3
+# print(list(itertools.repeat(num, 2)))
+
+# islice
+
+coll = [ 1, 3, 5, 4, 736, 23 ,1]
+# s = {1, 3, 5, 4, 736, 23 ,1}
+it = iter(coll)
+# print(coll[2:4])
+# print(list(itertools.islice(coll, 2, 4)))
+# print(list(itertools.islice(s, 2, 4)))
+# print(list(itertools.islice(it, 2, 4)))
+
+# import statistics
+# print(statistics.mean(it))
+# lst = []
+# def fibonacci(x = 0, y = 1):
+#     for i in range(10):
+#         x, y = y, x + y
+#         lst.append(x)
+# # x, y = y, x + y
+# fibonacci()
+# print(lst)
+
+# def fib_gen(x=0, y=1):
+#     while True:
+#         x, y = y, x + y
+#         yield x
+# z = fib_gen()
+# for _ in range(10):
+#     print(next(z))
+
+
+# f = open("c:/tmp/qqq.txt")
+# with open("c:/tmp/qqq.txt") as f:
+    # for line in f:
+    #     print(line)
+# obj = f.read()
+# print(obj)
+# f.close()
+# print(type(obj))
+#
+#     print(f.readline())
+#     print(*f.readlines()[:2], sep='')
+# from pprint import pprint
+# with open("c:/tmp/war_and_peace.html", encoding="utf8") as file:
+#     content = file.read()
+# print(len(content))
+# dic = {}
+# for i in content:
+#     if i in dic:
+#         dic[i] += 1
+#     else:
+#         dic[i] = 1
+# pprint(dic)
+#
+#
+# print(max(dic.values()))
+# print(f"the key of max value is {min(dic, key=dic.get)}")
