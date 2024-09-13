@@ -1961,3 +1961,150 @@ it = iter(coll)
 #
 # print(max(dic.values()))
 # print(f"the key of max value is {min(dic, key=dic.get)}")
+
+# 13.09.2024
+
+
+# with open("c:/tmp/qqq2.txt", 'r') as file:
+#     print(file.read(5))
+#     print(file.read(5))
+#     file.seek(9)
+#     print(file.read(5))
+#     pos = file.tell()
+#     print(pos)
+#     print(file.readline(), end='') # \n - EOL ; EOF
+#     print(file.readline())
+
+# with open("out.txt", 'w') as file_w:
+#     file_w.write("Hello1\n")
+#     file_w.write("Hello2")
+#     print(file_w.readline())
+# with open("out.txt", 'w+') as file_w:
+#     file_w.write("Hello1\n")
+#     file_w.write("Hello2")
+#     file_w.seek(0)
+#     print(file_w.read())
+# print(file)
+# l = ['Delhi\n', 'London\n', 'Paris\n']
+# with open("out.txt", 'a+') as file_w:
+#     # file_w.write("Hello1\n")
+#     # file_w.write("Hello2\n")
+#     file_w.seek(0)
+#     print(file_w.read())
+#     file_w.writelines(l)
+#     file_w.seek(0)
+#     print(file_w.read())
+
+# from pathlib import Path
+#
+# directory = Path("c:/tmp")
+# print(directory.is_dir())
+# dir_iter = directory.iterdir()
+# print(dir_iter)
+# l = [x for x in dir_iter]
+# print(l)
+# text = []
+# for path in dir_iter:
+#     if path.is_file() and path.suffix == '.txt':
+#         text.append(path.read_text())
+
+# l = [x.read_text(errors='ignore') for x in dir_iter if x.is_file() and x.suffix == '.txt']
+# for txt in l:
+#     print(txt)
+
+# with open("out.txt") as file:
+#     lst = []
+#     f = file.read()
+#     for word in f.split():
+#         lst.append(word)
+# print(lst)
+
+# with open("c:/tmp/qqq.txt") as file:
+#     # print(file.readlines())
+#     print(*file.readlines()[2:5], sep='')
+
+# with open("c:/tmp/hamlet.txt") as file:
+#     print(file.__sizeof__())
+#     pass
+# count = 10
+# def process_large_file(file_path):
+#     with open(file_path, encoding='utf-8') as file:
+#         for line in file:
+#             yield line
+#         # print(file.read())
+#
+# large = process_large_file("c:/tmp/hamlet.txt")
+# while input() == '':
+#     for i in range(count):
+#         print(next(large))
+
+
+# JSON file
+# import json
+#
+# with open("c:/tmp/example.json") as file:
+#     f = json.load(file)
+#     # print(f)
+#     # print(type(f))
+#     # print(f['widget'])
+#     for i in f['widget'].values():
+#         print(i)
+
+
+import fitz
+from PIL import Image
+
+input_file = r"c:/tmp/156.pdf"  # use an existing PDF file
+handle = fitz.open(input_file)  # open file for handling
+# print(type(handle))
+# print(isinstance(handle,collections.abc.Iterable))
+# print(dir(handle))
+# page = handle[0]    # choose specific page from file
+# page_img = page.get_pixmap()    # get image copy of the it
+# page_img.save("c:/tmp/pdf1.png") # save this image to the disk
+# img = Image.open("c:/tmp/pdf1.png")
+# img.show()
+# time.sleep(5)
+# img.close()
+# img.show()
+# i = 0
+# for page in handle:
+#     page = page.get_pixmap()
+#     page.save(f"c:/tmp/pdf_{i}.png")
+#     i += 1
+
+import os
+# os.system("calc")
+path = "c:/tmp/2"
+if not os.path.isdir(path):
+    os.mkdir(path)
+
+
+# print(os.path.curdir) # not usable for standard work
+# print(os.path.abspath(os.path.curdir))
+# print(os.getcwd())  # similar to previous command
+
+# d = os.system("dir /B *.py")
+# print(d)
+# ip = '8.8.8.8'
+# pipe = os.popen(f"ping {ip}")
+# # print(type(pipe))
+# pull = pipe.read()
+# count = -1
+# response = f"{ip}:"
+# for i in pull.split():
+#     if i == response:
+#         count += 1
+#
+# if count == 4:
+#     print("the ping is answered fully")
+#     print(*pull.split()[-3:])
+#
+# elif count == 0:
+#     print("the ping was not answered at all")
+# else:
+#     print(f"the ping was answered {count} times")
+
+import shutil
+
+shutil.rmtree("c:/tmp/2")
