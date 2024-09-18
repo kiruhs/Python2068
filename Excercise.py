@@ -2106,5 +2106,144 @@ if not os.path.isdir(path):
 #     print(f"the ping was answered {count} times")
 
 import shutil
-
 shutil.rmtree("c:/tmp/2")
+
+# 17.09.2024
+
+# create 10 files new1 - new10 .txt "This is file number <num>"
+
+# for f in range(1,11):
+#     with open(f"c:/tmp/new_{f}.txt", 'w+') as file:
+#         file.write(f"This is file number {f}")
+#
+# print(os.system('dir c:\\tmp\\new_*'))
+
+# size = os.path.getsize("c:/tmp/new_1.txt")
+# # print(size)
+d = "c:/tmp/"
+# # print(os.listdir(d))
+# for file in os.listdir(d):
+#     try:
+#         f = d + file
+#         if os.path.getsize(f) < 1000:
+#             print(file, os.path.getsize(f))
+#     except FileNotFoundError:
+#         print("not handled file")
+
+# ~
+# PATH = d
+# files = os.listdir(PATH)
+# sizes = [os.path.getsize(PATH+f) for f in files]
+# print(sizes)
+#
+# print(f"{sum(sizes)/1024/1024:.2f} MB" if sum(sizes) > 1024+1024 else sum(sizes) if sum(sizes) < 1024 else f"{sum(sizes)/1024:.2f} KB" if sum(sizes)< 1024*1024 else sum(sizes))
+
+# from pathlib import Path
+# current = Path('.')
+# it = current.iterdir()
+# for item in range(len(list(current.iterdir()))):
+#     print(next(it))
+
+
+# with open ("c:/tmp/emails.txt") as mail:
+#     l = mail.readlines()
+# for person in l:
+#     if '@' in person:
+#         print(person.split()[3])
+
+# l1 = open("c:/tmp/qqq.txt").readlines()
+# l2 = open("c:/tmp/prices.txt").readlines()
+# with open("c:/tmp/output.txt", 'w') as out:
+#     for i, j in zip(l1,l2,):
+#         out.write(i)
+#         out.write(j)
+#     out.write("\n")
+#     for i in l1[len(l2):] if len(l1) > len(l2) else l2[len(l1):]:
+#         out.write(i)
+#
+# with open("c:/tmp/output.txt") as f:
+#     txt = f.read()
+# print(txt)
+
+# str = "[ku {[ who]]}" # LIFO
+#
+# def is_balanced(s):
+#     stack = []
+#     mapping = {')':'(', ']':'[', '}':'{'}
+#     for char in s:
+#         if char in mapping:
+#             top_element = stack.pop() if stack else '#'
+#             if mapping[char] != top_element:
+#                 return False
+#         elif char not in mapping.values():
+#             continue
+#         else:
+#             stack.append(char)
+#     return not stack
+#
+# print(is_balanced(str))
+# print(is_balanced("('Hello',True,[5,}])[[{}]]()"))
+
+# map()
+import operator
+
+# def my_map(func, *iterable):
+#     iters = [iter(seq) for seq in iterable]
+#     try:
+#         while True:
+#             yield func(*[next(it) for it in iters])
+#     except StopIteration:
+#         pass
+#
+#
+# res = my_map(lambda x: x**2, 3)
+# print(*res)
+
+# Collatz hypotesis
+# if the number is even (num/2), if num odd (num*3 + 1)
+
+# def collatz(n):
+#     cnt = 0
+#     # yield n
+#     while True:
+#         n = n / 2 if n % 2 == 0 else 3*n + 1
+#         cnt +=1
+#         # yield n
+#         if n == 1:
+#             break
+#     return cnt
+# d = {}
+# for i in range(2,101):
+#     d.update({i:collatz(i)})
+#
+# print(d)
+
+# ============= my version
+
+# def collatz(n):
+#     yield n
+#     while n != 1:
+#         n = n/2 if n%2 == 0 else 3*n +1
+#         yield int(n)
+# length = 1
+# x = 1
+# for i in range(2, 100001):
+#     l = list(collatz(i))
+#     if len(l) > length:
+#         length = len(l)
+#         x = i
+# print(f"number {x} contains {length} elements in Collatz iterable collection")
+
+# data_list = [54,4353,26,93,17,77,31,44,-55,20,17]
+#
+# def quick_sort(arr):
+#     if len(arr) <= 1:
+#         return arr
+#     pivot = arr[len(arr)//2]
+#     left = [x for x in arr if x < pivot]
+#     middle = [x for x in arr if x == pivot]
+#     right = [x for x in arr if x > pivot]
+#     return quick_sort(left) + middle + quick_sort(right)
+#
+# sort = quick_sort(data_list)
+# print(sort)
