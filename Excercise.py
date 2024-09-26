@@ -2247,3 +2247,198 @@ import operator
 #
 # sort = quick_sort(data_list)
 # print(sort)
+
+
+# 24.09.2024
+#
+# mails = []
+# with open("c:/tmp/emails.txt") as email:
+#     data = email.read()
+#     words = data.split()
+#
+# for w in words:
+#     if "@" in w and "." in w:
+#         mails.append(w)
+# print(mails)
+
+# def merge_files(file1, file2, destin):
+#     with open(file1) as f1, open(file2) as f2:
+#         lines1 = iter(f1.readlines())
+#         lines2 = iter(f2.readlines())
+#
+#     with open(destin, 'w') as out:
+#         for l1, l2 in zip(lines1, lines2):
+#             out.write(f"{l1}{l2}")
+#         for l in lines1:
+#             out.write(l)
+#         for l in lines2:
+#             out.write(l)
+#
+# merge_files("c:/tmp/qqq.txt", "c:/tmp/prices.txt", "out.txt")
+#
+# with open("out.txt") as res:
+#     txt = res.read()
+#     print(txt)
+
+# exceptions handling
+# a = "world"
+# b = 5
+# print("Hello!")
+# try:
+#     print(a + b)
+# except:
+#     print("invalid types of data")
+# print("Finish")
+
+# try:
+#     x = int(input("Please enter a number: "))
+#
+# except ValueError:
+#     x = None
+
+# path = 'out2.txt'
+# try:
+#     with open(path) as f:
+#         f.read()
+#         print("OK")
+# except FileNotFoundError:
+#     print("No such file or directory:", path)
+
+# try:
+#     print(z)
+# except NameError:
+#     print("No variable with such name is defined")
+# try:
+#     x, y = map(int, input().split())
+#     div = x / y
+#     print(div)
+# except ZeroDivisionError:
+#     print("zero division, try again")
+#
+# except ValueError:
+#     print("Invalid value entered")
+# finally:
+#     print("This block works in any case")
+
+# def div_mul(a,b):
+#     try:
+#         x = a / b
+#         # return x
+#     except ZeroDivisionError:
+#         return None
+#     finally:
+#         y = a * b
+#         return y
+
+# print(div_mul(5, 0))
+
+# except Exception as error:
+#     print(error)
+
+# try:
+#     x, y = map(int, input().split())
+#     div = x / y
+# except ZeroDivisionError:
+#     print("zero division, try again")
+# except ValueError:
+#     print("Invalid value entered")
+# else:
+#     print(div)
+# finally:
+#     print("This block works in any case")
+
+# x = int(input("Enter positive number"))
+#
+# try:
+#     if x < 0:
+#         raise ValueError("The nuber is negative")
+#     print("your number is", x)
+# except ValueError as e:
+#     print(e)
+
+# x = int(input("Enter positive number"))
+# try:
+#     assert x >= 0, "Only positive numbers are allowed"
+# except AssertionError as e:
+#     print("An error is: ", e)
+#
+
+# try:
+#     result = 1 / 0
+# except ZeroDivisionError:
+#     pass
+# print("The world is beauty without errors")
+
+# try:
+#     input(x)
+# except KeyboardInterrupt:
+#     print("the program was interrupted by user")
+
+# nums = [1, 3, 5, 8]
+# try:
+#     l = nums.lenght
+#     print(l)
+# except AttributeError as e:
+#     print(e)
+
+# def func2():
+#     try:
+#         return 1 / 0
+#     except ZeroDivisionError:
+#         print("The error thrown in func2")
+#
+# def func1():
+#     # try:
+#         return func2()
+#     # except ZeroDivisionError:
+#     #     print("error in func1")
+#
+# print("Hello")
+# # try:
+# func1()
+# # except ZeroDivisionError:
+# #     print("error in main func")
+# print("world")
+
+
+import requests
+import json
+
+# url = "https://httpbin.org/get"
+# response = requests.get(url)
+#
+# print(type(response.text)) # string type
+# # print(type(response.content)) # bytes type
+# j = response.json()
+# print(type(j)) # type - dictionary
+# print(type(json.dumps(j, indent=4, sort_keys=True))) # print json in pretty mode - type string
+
+# url2 = "http://lib.ru/SHAKESPEARE/shks_hamlet16.txt"
+# response = requests.get(url2)
+# with open("hamlet.txt", "w", encoding='utf-8') as book:
+#     book.write(response.text)
+#
+# with open("hamlet.txt", encoding='utf-8') as book:
+#     print(book.read())
+
+# response = requests.get(url2, stream=True)
+# with open("hamlet_chunks.txt", 'w', encoding='utf-8') as chunks:
+#     for piece in response.iter_content(chunk_size=1000):
+#         print("chunk written")
+#         chunks.write(piece.decode(response.encoding))
+
+# binary file
+
+url2 = 'https://pixabay.com/get/g47a49c8b98c9490732a81da8ac8a3a93c8c08b62eeee664851ad73956013111a811f762f27ea5c1433745325665436bf.jpg'
+
+with open('pic1.jpg', 'wb') as handle:
+    response = requests.get(url2, stream=True)
+    # print(response.encoding)
+    if not response.ok:
+        print(response)
+
+    for block in response.iter_content(10240):
+        if not block:
+            break
+
+        handle.write(block)
